@@ -1,4 +1,5 @@
 ﻿using BE_AGENDA_API.Entities;
+using BE_AGENDA_API.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,42 +9,16 @@ namespace BE_AGENDA_API.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        public static List<User> FakeUsers = new List<User>()
+        private UserRepository _userRepository { get; set; }
+        public UserController(UserRepository userRepository) /* Contructor de la clase */
         {
-            new User()
-            {
-                Id = 1,
-                Email= "bruno@asdas.com",
-                Name ="Bruno",
-                Password = "contraseñasegura"
-            },
-            new User()
-            {
-                Id=2,
-                Email= "eli@asdas.com",
-                Name ="Eliana",
-                Password = "contraseñasegura"
-            },
-            new User()
-            {
-                Id=3,
-                Email= "perla@asdas.com",
-                Name ="Perla",
-                Password = "contraseñasegura"
-            },
-            new User()
-            {
-                Id=4,
-                Email= "sandra@asdas.com",
-                Name ="Sandra",
-                Password = "contraseñasegura"
-            }
+            _userRepository = userRepository;
+        }
 
-        };
         [HttpGet]
         public IActionResult GetAll()
         {
-            return Ok(FakeUsers);
+            return Ok(_userRepository.GetAllUsers());
         }
 
         [HttpGet]
@@ -51,7 +26,8 @@ namespace BE_AGENDA_API.Controllers
 
         public IActionResult GetOneById( int Id) /* Metodo para traer un User por ID */
         {
-            List<User> UserToReturn = FakeUsers.Where(x => x.Id == Id).ToList();
+            List<User> UserToReturn = _userRepository.GetAllUsers();
+            UserToReturn.Where(x => x.Id == Id).ToList();
             if (UserToReturn.Count > 0)
                 return Ok(UserToReturn);
             return BadRequest("Usuario inexistente");

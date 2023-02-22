@@ -52,10 +52,21 @@ namespace BE_AGENDA_API.Controllers
             }
 
         };
-        [HttpGet]
+        [HttpGet] /* Metodo para traer todos los Users */
         public IActionResult GetAll()
         {
             return Ok(FakeContact);
+        }
+
+        [HttpGet]
+        [Route("getOne/{Id}")]
+
+        public IActionResult GetOneById(int Id) /* Metodo para traer un User por ID */
+        {
+            List<Contact> ContactToReturn = FakeContact.Where(x => x.Id == Id).ToList();
+            if (ContactToReturn.Count > 0)
+                return Ok(ContactToReturn);
+            return BadRequest("Contacto inexistente");
         }
     }
 }

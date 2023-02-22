@@ -49,9 +49,12 @@ namespace BE_AGENDA_API.Controllers
         [HttpGet]
         [Route("getOne/{Id}")]
 
-        public IActionResult GetOneById( int Id)
+        public IActionResult GetOneById( int Id) /* Metodo para traer un User por ID */
         {
-            return Ok(FakeUsers.Where(x => x.Id == Id).ToList());
+            List<User> UserToReturn = FakeUsers.Where(x => x.Id == Id).ToList();
+            if (UserToReturn.Count > 0)
+                return Ok(UserToReturn);
+            return BadRequest("Usuario inexistente");
         }
 
     }

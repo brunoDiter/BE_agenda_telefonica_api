@@ -1,4 +1,5 @@
-﻿using BE_AGENDA_API.Entities;
+﻿using BE_AGENDA_API.DTOs;
+using BE_AGENDA_API.Entities;
 using BE_AGENDA_API.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -32,6 +33,12 @@ namespace BE_AGENDA_API.Controllers
                 return Ok(UserToReturn);
             return BadRequest("Usuario inexistente");
         }
+        [HttpPost]
+        public IActionResult CreateUser(UserForCreationDTO userDTO)
+        {
+            _userRepository.CreateUser(userDTO);
+            return NoContent();
+        } 
 
     }
 }

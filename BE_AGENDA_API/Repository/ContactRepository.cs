@@ -52,5 +52,6 @@ namespace BE_AGENDA_API.Repository
         {
             return FakeContact;
         }
-    }
+        
+    }   
 };

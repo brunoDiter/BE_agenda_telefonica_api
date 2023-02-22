@@ -1,4 +1,5 @@
-﻿using BE_AGENDA_API.Entities;
+﻿using BE_AGENDA_API.DTOs;
+using BE_AGENDA_API.Entities;
 
 namespace BE_AGENDA_API.Repository
 {
@@ -40,5 +41,22 @@ namespace BE_AGENDA_API.Repository
             {
                 return FakeUsers;
             }
+
+        public bool CreateUser(UserForCreationDTO userDTO)
+        {
+            User user = new User()
+            {
+                Email = userDTO.Email,
+                Name = userDTO.Name,
+                Password = userDTO.Password,
+                LastName = userDTO.LastName,
+                Id = userDTO.Id,
+            };
+
+            FakeUsers.Add(user);
+            return true;
+
+                
+        }
     }
 }

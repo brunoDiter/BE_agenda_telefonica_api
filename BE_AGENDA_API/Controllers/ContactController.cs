@@ -1,4 +1,5 @@
-﻿using BE_AGENDA_API.Entities;
+﻿using BE_AGENDA_API.DTOs;
+using BE_AGENDA_API.Entities;
 using BE_AGENDA_API.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -34,6 +35,13 @@ namespace BE_AGENDA_API.Controllers
             return BadRequest("Contacto inexistente");
         }
 
+        [HttpPost]
+        public IActionResult createContact (ContactForCreationDTO contactDTO)
+        {
+            _contactRepository.createContact(contactDTO);
+            return NoContent();
+
+        }
         
 
     }

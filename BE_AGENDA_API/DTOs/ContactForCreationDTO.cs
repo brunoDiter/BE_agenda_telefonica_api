@@ -11,6 +11,5 @@ namespace BE_AGENDA_API.DTOs
         public long CelularNumber { get; set; }
         public long TelephoneNumber { get; set; }
         public string Email { get; set; }
-        public string birthday { get; set; }
     }
 }

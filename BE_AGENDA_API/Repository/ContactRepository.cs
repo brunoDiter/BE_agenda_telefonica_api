@@ -14,8 +14,7 @@ namespace BE_AGENDA_API.Repository
                 LastName = "ASDA",
                 CelularNumber = 3412799201,
                 TelephoneNumber = 4610399,
-                Email = "asdas@asd.com",
-                birthday = "21/09/1990"
+                Email = "asdas@asd.com"
             },
             new Contact()
             {
@@ -24,8 +23,7 @@ namespace BE_AGENDA_API.Repository
                 LastName = "ASDA",
                 CelularNumber = 3412799201,
                 TelephoneNumber = 4610399,
-                Email = "asdas@asd.com",
-                birthday = "21/09/1990"
+                Email = "asdas@asd.com"
             },
             new Contact()
             {
@@ -34,8 +32,7 @@ namespace BE_AGENDA_API.Repository
                 LastName = "ASDA",
                 CelularNumber = 3412799201,
                 TelephoneNumber = 4610399,
-                Email = "asdas@asd.com",
-                birthday = "21/09/1990"
+                Email = "asdas@asd.com"
             },
             new Contact()
             {
@@ -44,8 +41,7 @@ namespace BE_AGENDA_API.Repository
                 LastName = "ASDA",
                 CelularNumber = 3412799201,
                 TelephoneNumber = 4610399,
-                Email = "asdas@asd.com",
-                birthday = "21/09/1990"
+                Email = "asdas@asd.com"
             }
         };
 

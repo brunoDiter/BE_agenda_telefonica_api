@@ -1,4 +1,4 @@
-using BE_AGENDA_API.Repository;
+using BE_AGENDA_API.Data.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 

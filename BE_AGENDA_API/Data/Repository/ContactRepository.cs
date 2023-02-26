@@ -1,7 +1,7 @@
 ﻿using BE_AGENDA_API.DTOs;
 using BE_AGENDA_API.Entities;
 
-namespace BE_AGENDA_API.Repository
+namespace BE_AGENDA_API.Data.Repository
 {
     public class ContactRepository
     {
@@ -49,8 +49,8 @@ namespace BE_AGENDA_API.Repository
         {
             return FakeContact;
         }
-        
-        public bool createContact (ContactForCreationDTO contactDTO)
+
+        public bool createContact(ContactForCreationDTO contactDTO)
         {
             Contact contact = new Contact();
             {
@@ -61,9 +61,9 @@ namespace BE_AGENDA_API.Repository
                 contact.TelephoneNumber = contactDTO.TelephoneNumber;
                 contact.Email = contactDTO.Email;
             }
-            
+
             FakeContact.Add(contact);
             return true;
         }
-    }   
+    }
 };

@@ -1,6 +1,6 @@
-﻿using BE_AGENDA_API.DTOs;
+﻿using BE_AGENDA_API.Data.Repository;
+using BE_AGENDA_API.DTOs;
 using BE_AGENDA_API.Entities;
-using BE_AGENDA_API.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,19 +22,23 @@ namespace BE_AGENDA_API.Controllers
             return Ok(_userRepository.GetAllUsers());
         }
 
-        [HttpGet]
-        [Route("getOne/{Id}")]
+        //[HttpGet]
+        //[Route("{Id}")]
 
-        public IActionResult GetOneById( int Id) /* Metodo para traer un User por ID */
-        {
-            List<User> UserToReturn = _userRepository.GetAllUsers();
-            UserToReturn.Where(x => x.Id == Id).ToList();
-            if (UserToReturn.Count > 0)
-                return Ok(UserToReturn);
-            return BadRequest("Usuario inexistente");
-        }
+        //public IActionResult GetOneById( int Id) /* Metodo para traer un User por ID */
+        //{
+        //    try
+        //    {
+        //        return Ok(_userRepository.GetById(Id));
+        //    }
+        //    catch
+        //    {
+        //        return BadRequest();
+        //    }
+        //}
+
         [HttpPost]
-        public IActionResult CreateUser(UserForCreationDTO userDTO)
+        public IActionResult CreateUser(UserForCreationDTO userDTO) /* Metodo para agregar un usuario */
         {
             _userRepository.CreateUser(userDTO);
             return NoContent();

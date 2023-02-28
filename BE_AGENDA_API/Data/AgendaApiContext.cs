@@ -38,6 +38,7 @@ namespace BE_AGENDA_API.Data
             {
                 Id = 1,
                 Name = "Jaimito",
+                LastName = "Sanchez",
                 CelularNumber = 341457896,
                 Description = "Plomero",
                 TelephoneNumber = null,
@@ -49,6 +50,7 @@ namespace BE_AGENDA_API.Data
             {
                 Id = 2,
                 Name = "Pepe",
+                LastName= "Gonzalez",
                 CelularNumber = 34156978,
                 Description = "Papa",
                 TelephoneNumber = 422568,
@@ -60,6 +62,7 @@ namespace BE_AGENDA_API.Data
             {
                 Id = 3,
                 Name = "Maria",
+                LastName="Perez",
                 CelularNumber = 011425789,
                 Description = "Jefa",
                 TelephoneNumber = null,

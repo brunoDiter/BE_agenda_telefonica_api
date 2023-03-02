@@ -3,6 +3,9 @@ using BE_AGENDA_API.DTOs;
 using BE_AGENDA_API.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
+using System.Text;
 
 namespace BE_AGENDA_API.Controllers
 {
@@ -42,7 +45,10 @@ namespace BE_AGENDA_API.Controllers
         {
             _userRepository.CreateUser(userDTO);
             return NoContent();
-        } 
+        }
 
+        
+
+        
     }
 }

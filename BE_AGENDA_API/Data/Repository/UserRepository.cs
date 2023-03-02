@@ -57,8 +57,11 @@ namespace BE_AGENDA_API.Data.Repository
 
             FakeUsers.Add(user);
             return true;
+        }
 
-
+        public User? Validate(string User, string Password) /* Metodo para saber si existe el User y la pass es correcta */
+        {
+            return FakeUsers.FirstOrDefault(x => x.UserName == User && x.Password == Password);
         }
     }
 }

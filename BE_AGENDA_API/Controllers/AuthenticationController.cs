@@ -41,8 +41,8 @@ namespace BE_AGENDA_API.Controllers
                 new Claim("fullname",$"{user.Name}{user.LastName}")
             };
 
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8
-                .GetBytes(_config["Jwt:Key"]));
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.
+                GetBytes(_config["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey,
                 SecurityAlgorithms.HmacSha256Signature);
             var tokenDescriptor = new JwtSecurityToken(

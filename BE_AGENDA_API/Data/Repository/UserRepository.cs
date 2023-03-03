@@ -12,28 +12,34 @@ namespace BE_AGENDA_API.Data.Repository
                 Id = 1,
                 Email= "bruno@asdas.com",
                 Name ="Bruno",
-                Password = "contraseñasegura"
+                Password = "contraseñasegura",
+                UserName = "bruno"
+                
             },
             new User()
             {
                 Id=2,
                 Email= "eli@asdas.com",
                 Name ="Eliana",
-                Password = "contraseñasegura"
+                Password = "contraseñasegura",
+                UserName = "eliana"
             },
             new User()
             {
                 Id=3,
                 Email= "perla@asdas.com",
                 Name ="Perla",
-                Password = "contraseñasegura"
+                Password = "contraseñasegura",
+                UserName = "perla"
+
             },
             new User()
             {
                 Id=4,
                 Email= "sandra@asdas.com",
                 Name ="Sandra",
-                Password = "contraseñasegura"
+                Password = "contraseñasegura",
+                UserName = "sandra"
             }
 
         };

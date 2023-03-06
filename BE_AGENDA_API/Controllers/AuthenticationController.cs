@@ -1,5 +1,5 @@
 ﻿using BE_AGENDA_API.Data.Repository;
-using BE_AGENDA_API.DTOs;
+using BE_AGENDA_API.Models.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;

@@ -1,6 +1,6 @@
 ﻿using BE_AGENDA_API.Data.Repository;
-using BE_AGENDA_API.DTOs;
 using BE_AGENDA_API.Entities;
+using BE_AGENDA_API.Models.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

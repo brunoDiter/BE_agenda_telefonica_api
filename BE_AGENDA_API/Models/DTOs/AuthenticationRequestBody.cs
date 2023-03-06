@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BE_AGENDA_API.DTOs
+namespace BE_AGENDA_API.Models.DTOs
 {
     public class AuthenticationRequestBody
     {

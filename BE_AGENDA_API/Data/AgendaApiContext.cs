@@ -15,6 +15,16 @@ namespace BE_AGENDA_API.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuidler) /* Utilizo el modificador override para sobreescribir el metodo de la clase padre */
         {
+            User admin = new User()
+            {
+                Id = 0,
+                Name = "admin",
+                LastName = "admin",
+                Password = "Pa$$w0rd",
+                Email = "karenbailapiola@gmail.com",
+                UserName = "karenpiola",
+                rol = Models.DTOs.Enum.Role.Rol.Admin
+            };
             User karen = new User()
             {
                 Id = 1,
@@ -22,7 +32,8 @@ namespace BE_AGENDA_API.Data
                 LastName = "Lasot",
                 Password = "Pa$$w0rd",
                 Email = "karenbailapiola@gmail.com",
-                UserName = "karenpiola"
+                UserName = "karenpiola",
+                rol = Models.DTOs.Enum.Role.Rol.User
             };
             User luis = new User()
             {
@@ -31,7 +42,9 @@ namespace BE_AGENDA_API.Data
                 LastName = "Gonzales",
                 Password = "lamismadesiempre",
                 Email = "elluismidetotoras@gmail.com",
-                UserName = "luismitoto"
+                UserName = "luismitoto",
+                rol = Models.DTOs.Enum.Role.Rol.User
+
             };
 
             Contact jaimitoC = new Contact()

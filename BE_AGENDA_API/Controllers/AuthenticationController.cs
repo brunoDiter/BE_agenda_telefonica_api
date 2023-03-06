@@ -38,7 +38,8 @@ namespace BE_AGENDA_API.Controllers
             {
                 new Claim("id",user.Id.ToString()),
                 new Claim("username",user.UserName),
-                new Claim("fullname",$"{user.Name}{user.LastName}")
+                new Claim("fullname",$"{user.Name}{user.LastName}"),
+                new Claim("role",user.rol.ToString())
             };
 
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.

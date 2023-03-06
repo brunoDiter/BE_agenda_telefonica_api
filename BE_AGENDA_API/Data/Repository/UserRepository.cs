@@ -1,6 +1,6 @@
 ﻿using BE_AGENDA_API.Entities;
 using BE_AGENDA_API.Models.DTOs;
-using static BE_AGENDA_API.Models.Enum;
+using static BE_AGENDA_API.Models.DTOs.Enum.States;
 
 namespace BE_AGENDA_API.Data.Repository
 {
@@ -78,7 +78,7 @@ namespace BE_AGENDA_API.Data.Repository
 
         public void Delete(int Id)
         {
-            FakeUsers.Remove(_context.Users.Single(u => u.Id == Id));
+            _context.Users.Remove(_context.Users.Single(u => u.Id == Id));
         }
         
         public void Archive(int Id)

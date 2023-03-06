@@ -1,6 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BE_AGENDA_API.Models.DTOs.Enum;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using static BE_AGENDA_API.Models.Enum;
+using static BE_AGENDA_API.Models.DTOs.Enum.Role;
+using static BE_AGENDA_API.Models.DTOs.Enum.States;
 
 namespace BE_AGENDA_API.Entities
 {
@@ -16,8 +18,10 @@ namespace BE_AGENDA_API.Entities
         [Required]
         public string? Email { get; set; }
         public string Password { get; set; }
-       public ICollection<Contact>? Contact { get; set; }
-       public State state { get; set; } = State.Active; /* Creo un state, para utilizar en el metodo Archive de User. */
+        public ICollection<Contact>? Contact { get; set; }
+        public State state { get; set; } = State.Active; /* Creo un state, para utilizar en el metodo Archive de User. */
+        public Rol rol { get; set; } = Rol.User;
+        
 
     }
 }

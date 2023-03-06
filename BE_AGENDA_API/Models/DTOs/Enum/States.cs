@@ -1,6 +1,6 @@
-﻿namespace BE_AGENDA_API.Models
+﻿namespace BE_AGENDA_API.Models.DTOs.Enum
 {
-    public class Enum
+    public class States
     {
         public enum State
         {

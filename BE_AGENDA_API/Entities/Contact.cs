@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using static BE_AGENDA_API.Models.DTOs.Enum.States;
 
 namespace BE_AGENDA_API.Entities
 {
@@ -13,6 +14,7 @@ namespace BE_AGENDA_API.Entities
         public long? TelephoneNumber { get; set; }
         public string Email { get; set; }
         public string Description { get; set; }
+        public State State { get; set; } = State.Active; /* Creo un state, para poder hacer un delete logico. */
 
 
         [ForeignKey ("UserId")] /* Indico cual va a ser la clave foranea, indicandole el nombre.*/

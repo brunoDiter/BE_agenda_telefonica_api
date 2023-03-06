@@ -25,14 +25,29 @@ namespace BE_AGENDA_API.Controllers
 
 
         [HttpGet]
-        [Route("getOne/{Id}")]
-        public IActionResult GetOneById(int Id) /* Metodo para traer un User por ID */
+        [Route("{Id}")]
+        public IActionResult GetOneById(int Id)
         {
-            List<Contact> ContactToReturn = _contactRepository.GetAllContacts();
-            ContactToReturn.Where(x => x.Id == Id).ToList();
-            if (ContactToReturn.Count > 0)
-                return Ok(ContactToReturn);
-            return BadRequest("Contacto inexistente");
+            Contact contact = _contactRepository.GetById(Id);
+
+            GetContactByIdResponse dto = new GetContactByIdResponse()
+            {
+                Name = contact.Name,
+                CelularNumber = contact.CelularNumber,
+                LastName = contact.LastName,
+                TelephoneNumber = contact.TelephoneNumber,
+                Email = contact.Email,
+                Description = contact.Description
+            };
+            try
+            {
+                return Ok();
+            }
+            catch
+            {
+                return BadRequest();
+            }
+            
         }
 
         [HttpPost]
@@ -41,6 +56,12 @@ namespace BE_AGENDA_API.Controllers
             _contactRepository.createContact(contactDTO);
             return NoContent();
 
+        }
+
+        [HttpDelete]
+        public IActionResult Delete(int Id)
+        {
+            _contactRepository
         }
         
 
